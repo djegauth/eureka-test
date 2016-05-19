@@ -9,10 +9,10 @@ Test Netflix Eureka Service Registry
 
 ## Docker configuration
 ### Create User-defined Network
-    docker network create --driver bridge eureka_nw
+    docker network create --driver=bridge eureka_nw
 
 ### Run eureka-server peer1 instance
-    docker run -e "SPRING_PROFILES_ACTIVE=peer1" -p 8761:8761 -t --net=eureka_nw --hostname=peer1 --name=eureka-server-peer1 jgauthier/eureka-server
+    docker run --hostname="peer1" --net=eureka_nw --name=peer1 -e "SPRING_PROFILES_ACTIVE=peer1" -p 8761:8761 -t jgauthier/eureka-server
 
 ### Run eureka-server peer2 instance
-    docker run -e "SPRING_PROFILES_ACTIVE=peer2" -p 8762:8762 -t --net=eureka_nw --hostname=peer2 --name=eureka-server-peer2 jgauthier/eureka-server
+    docker run --hostname="peer2" --net=eureka_nw --name=peer2 -e "SPRING_PROFILES_ACTIVE=peer2" -p 8762:8762 -t jgauthier/eureka-server
