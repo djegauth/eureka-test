@@ -1,4 +1,4 @@
-docker stop eureka-server-peer1
-docker stop eureka-server-peer2
-docker rm eureka-server-peer1
-docker rm eureka-server-peer2
+docker stop peer1
+docker stop peer2
+docker rm peer1
+docker rm peer2
