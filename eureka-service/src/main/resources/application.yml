@@ -1,6 +1,9 @@
 server:
   port: 9000
 
+hello:
+  service: Hello Service
+
 eureka:
   client:
     serviceUrl:

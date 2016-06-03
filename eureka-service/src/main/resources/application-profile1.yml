@@ -1,0 +1,5 @@
+server:
+  port: 9001
+
+hello:
+  service: Hello Service Profile 1

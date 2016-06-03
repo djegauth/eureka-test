@@ -1,9 +1,26 @@
 server:
   port: 8080
 
+management:
+  context-path: /admin
+
 eureka:
   client:
+    registerWithEureka: false
     serviceUrl:
       defaultZone: http://peer2:8762/eureka/,http://peer1:8761/eureka/
   instance:
-    preferIpAddress: true
+    statusPageUrlPath: ${management.context-path}/info
+    healthCheckUrlPath: ${management.context-path}/health
+
+endpoints:
+  beans:
+    id: springbeans
+    sensitive: false
+    enabled: true
+  metrics:
+    id: metrics
+    sensitive: true
+    enabled: true
+
+
